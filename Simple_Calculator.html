@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        #submit{
+           color: white;
+           background-color: black;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <script>
+        function cal(){
+            //alert("Function Called");
+            var val = document.getElementById("operator").value;
+            var op1 = Number(document.getElementById("operand1").value);
+            var op2 = Number(document.getElementById("operand2").value);
+            //document.getElementById("result").value = val;
+            if(val == "+"){
+                document.getElementById("result").value = op1+op2;
+                    return;
+            }
+            else if(val == "-"){
+                document.getElementById("result").value = op1-op2;
+                    return;
+            }
+            else if(val == "/"){
+                if(op2 == 0){
+                    document.getElementById("result").value = "Division by Zero is not possible";
+                    return;
+                }
+                document.getElementById("result").value = op1/op2;
+                    return;
+            }
+            else{
+                document.getElementById("result").value = op1*op2;
+                    return;
+            }
+
+            
+
+        }
+    </script>
+    <div style="text-align: center;">
+        <h1 >Simple Calculator</h1>
+        <input id="operand1" type="number" placeholder="Enter a Number">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select>
+        <input id="operand2" type="number" placeholder="Enter a Number"> =
+        <input id="result" type="text" disabled>
+        <br><br>
+        <button id="submit" type="button" onclick="cal()">Result</button>
+    </div>
+    
+</body>
+</html>
