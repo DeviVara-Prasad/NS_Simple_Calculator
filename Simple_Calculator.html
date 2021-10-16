@@ -22,26 +22,28 @@
             var op1 = Number(document.getElementById("operand1").value);
             var op2 = Number(document.getElementById("operand2").value);
             //document.getElementById("result").value = val;
+            var re;
             if(val == "+"){
-                document.getElementById("result").value = op1+op2;
-                    return;
+                re = op1+op2;
+                    
             }
             else if(val == "-"){
-                document.getElementById("result").value = op1-op2;
-                    return;
+                re = op1-op2;
+                    
             }
             else if(val == "/"){
                 if(op2 == 0){
                     document.getElementById("result").value = "Division by Zero is not possible";
                     return;
                 }
-                document.getElementById("result").value = op1/op2;
-                    return;
+                re = op1/op2;
+                    
             }
             else{
-                document.getElementById("result").value = op1*op2;
+                re = op1*op2;
                     return;
             }
+            document.getElementById("result").value = re;
 
             
 
